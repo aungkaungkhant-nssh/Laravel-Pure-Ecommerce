@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class UserChek
+class UserCheck
 {
     /**
      * Handle an incoming request.
@@ -15,8 +15,8 @@ class UserChek
      * @return mixed
      */
     public function handle(Request $request, Closure $next)
-    {   
-        if($request->session()->has("user")){
+    {
+        if($request->path()==="login" && $request->session()->has("user")){
             return redirect("/home");
         }
         return $next($request);

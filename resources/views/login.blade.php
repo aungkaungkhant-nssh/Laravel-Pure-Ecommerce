@@ -12,7 +12,7 @@
                    @if (Session::has("error"))
                        <div class="alert alert-danger">{{Session::get("error")}}</div>
                    @endif
-                   <form action="/" method="post">
+                   <form action="/login" method="post">
                        @csrf
                        <div class="mb-3">
                            <label for="" class="mb-2">Enter Your Email</label>

@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('home');
+});
+Route::get("/login",function(){
+    return view("login");
 })->middleware("userCheck");
 Route::get("/logout",[UserController::class,'logout']);
 Route::get("/register",function(){
@@ -25,4 +28,4 @@ Route::get("/home",function(){
     return view("home");
 });
 Route::post("/addUser",[UserController::class,'addUser']);
-Route::post("/",[UserController::class,'login']);
+Route::post("/login",[UserController::class,'login']);
