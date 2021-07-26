@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('login');
-});
+})->middleware("userCheck");
 Route::get("/logout",[UserController::class,'logout']);
 Route::get("/register",function(){
     return view("register");
