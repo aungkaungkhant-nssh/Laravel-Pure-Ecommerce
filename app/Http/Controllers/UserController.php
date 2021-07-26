@@ -32,4 +32,8 @@ class UserController extends Controller
             return redirect("/home");
         }
     }
+    public function logout(Request $req){
+        $req->session()->forget("user");
+        return redirect('/');
+    }
 }

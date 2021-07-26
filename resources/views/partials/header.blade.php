@@ -12,16 +12,29 @@
           <li class="nav-item">
             <a class="nav-link  text-white" href="/orders">Orders</a>
           </li>
-          <li class="nav-item dropdown ">
-            <a class="nav-link dropdown-toggle  text-white" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" >
-              LogInAndRegister
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="/">login</a></li>
-              <li><a class="dropdown-item" href="/register">Register</a></li>
-            </ul>
+          @if (!Session::has("user"))
+              <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle  text-white" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" >
+                  LogInAndRegister
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="/">login</a></li>
+                  <li><a class="dropdown-item" href="/register">Register</a></li>
+                </ul>
 
-          </li>
+              </li>
+            @else
+            <li class="nav-item dropdown ">
+              <a class="nav-link dropdown-toggle  text-white" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" >
+                {{Session::get("user")->name}}
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/logout">logout</a></li>
+              </ul>
+
+            </li>
+          @endif
+         
          
         </ul>
         <form class="d-flex">
