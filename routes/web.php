@@ -20,7 +20,9 @@ Route::get('/', function () {
 Route::get("/register",function(){
     return view("register");
 });
-Route::post("/addUser",[UserController::class,'addUser']);
-Route::get("/login",function(){
-    return view("login");
+Route::get("/home",function(){
+    return view("home");
 });
+Route::post("/addUser",[UserController::class,'addUser']);
+
+Route::post("/",[UserController::class,'login']);

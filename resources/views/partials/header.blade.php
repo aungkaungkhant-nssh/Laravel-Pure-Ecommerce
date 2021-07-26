@@ -17,7 +17,7 @@
               LogInAndRegister
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="/login">login</a></li>
+              <li><a class="dropdown-item" href="/">login</a></li>
               <li><a class="dropdown-item" href="/register">Register</a></li>
             </ul>
 

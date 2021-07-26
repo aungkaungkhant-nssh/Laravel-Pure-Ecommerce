@@ -22,4 +22,14 @@ class UserController extends Controller
             return redirect()->back()->with("nosuccess","Add User Not Success");
         }
     }
+    public function login(Request $req){
+        $user=User::where("email",$req->email)->first();
+   
+        if(!$user || !Hash::check($req->pass,$user->password) ){
+            return redirect()->back()->with("error","Invalid User And Password Please Try Again");
+        }else{
+            session()->put("user",$user);
+            return redirect("/home");
+        }
+    }
 }

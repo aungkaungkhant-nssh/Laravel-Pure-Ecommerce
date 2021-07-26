@@ -2,6 +2,6 @@
 @section('home')
     @section('content')
         <div>
-            <h1>Home</h1>
+            <h1>{{Session::get("user")}}</h1>
         </div>
     @endsection
