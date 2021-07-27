@@ -31,7 +31,7 @@
                 <h2 class="text-center mb-4">Treding Products</h2>
                 <div class="d-flex justify-content-between">
                     @foreach ($products as $p)
-                    <a href="/detail">
+                    <a href="/detail/{{$p->id}}">
                         <div class="mt-3">
                           <h5 class="text-center">{{strtoupper($p["name"]) }}</h5>         
                         </div>

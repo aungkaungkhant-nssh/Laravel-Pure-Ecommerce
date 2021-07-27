@@ -26,3 +26,4 @@ return view("register");
 
 Route::post("/addUser",[UserController::class,'addUser']);
 Route::post("/login",[UserController::class,'login']);
+Route::get("/detail/{id}",[ProductController::class,'detail']);
