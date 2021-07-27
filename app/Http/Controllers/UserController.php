@@ -17,7 +17,7 @@ class UserController extends Controller
         if($validator){
             $password=Hash::make($request->password);
             User::create(["name"=>$request->name,"email"=>$request->email,"password"=>$password]);
-            return redirect()->back()->with("success","Add User Success");
+            return redirect('/login')->with("success","Add User Success");
         }else{
             return redirect()->back()->with("nosuccess","Add User Not Success");
         }
@@ -29,7 +29,7 @@ class UserController extends Controller
             return redirect()->back()->with("error","Invalid User And Password Please Try Again");
         }else{
             session()->put("user",$user);
-            return redirect("/home");
+            return redirect("/");
         }
     }
     public function logout(Request $req){

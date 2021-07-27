@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,18 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/',[ProductController::class,"index"]);
 Route::get("/login",function(){
     return view("login");
-})->middleware("userCheck");
+});
 Route::get("/logout",[UserController::class,'logout']);
 Route::get("/register",function(){
-    return view("register");
+return view("register");
 });
-Route::get("/home",function(){
-    return view("home");
-});
+
 Route::post("/addUser",[UserController::class,'addUser']);
 Route::post("/login",[UserController::class,'login']);
