@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('home')
     @section('content')
-    {{-- {{$products}} --}}
+    {{-- Start carousel  --}}
     <div id="carouselExampleControls" class="carousel slide p-5 cs" data-bs-ride="carousel">
         <div class="carousel-inner">
             @foreach ($products as $product)
@@ -15,13 +15,34 @@
                
             @endforeach
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
       </div>
-    @endsection
+      {{-- End Carousel --}}
+      {{-- Start Treding Products --}}
+          <div class="treding-products p-3">
+              <div class="container">
+                <h2 class="text-center mb-4">Treding Products</h2>
+                <div class="d-flex justify-content-between">
+                    @foreach ($products as $p)
+                    <a href="/detail">
+                        <div class="mt-3">
+                          <h5 class="text-center">{{strtoupper($p["name"]) }}</h5>         
+                        </div>
+                        <div class="mt-3">
+                          <img src="{{$p->gallery}}" alt="" style="width:150px;height:130px">
+                          <h5 class="text-center mt-3" style="color:#95a5a6;">$ {{$p->price}}</h5>
+                        </div>
+                    </a>      
+                    @endforeach
+                </div>
+              </div>
+          </div>
+      {{-- End Treding Products --}}
+      @endsection

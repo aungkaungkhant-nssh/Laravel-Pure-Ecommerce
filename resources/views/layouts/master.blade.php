@@ -13,6 +13,9 @@
       .cs{
         background-color: #95a5a6;
       }
+      a{
+        text-decoration: none;
+      }
     </style>
   </head>
   <body>
