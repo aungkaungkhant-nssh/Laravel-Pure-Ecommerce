@@ -29,3 +29,4 @@ Route::get("/detail/{id}",[ProductController::class,'detail']);
 Route::get('/search',[ProductController::class,'search'])->name("product.search");
 Route::get("/addcart/{id}",[ProductController::class,'addCart'])->name("product.cart");
 Route::get("/cartList",[ProductController::class,'cartList'])->name("products.list");
+Route::get("/removeCart/{id}",[ProductController::class,'removeCart'])->name("products.remove");

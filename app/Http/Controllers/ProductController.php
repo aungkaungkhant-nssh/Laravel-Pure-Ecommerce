@@ -38,13 +38,12 @@ class ProductController extends Controller
       $carts=DB::table('carts')
             ->join("products","carts.product_id","=","products.id")
             ->where("user_id",$userId)
-            ->select("products.*")
+            ->select("products.*","carts.id as cart_id")
             ->get();
       return view("cartList",compact("carts"));
    }
+   public function removeCart($id){
+      Cart::destroy($id);
+      return redirect()->back()->with("remove","remove cart from cart list");
+   }  
 }
-//  $carts=DB::table('carts')
-//                 ->join("products","carts.product_id","=","products.id")
-//                 ->where("user_id",$userId)
-//                 ->select("products.*",'carts.id as cart_id')
-//                 ->get();
