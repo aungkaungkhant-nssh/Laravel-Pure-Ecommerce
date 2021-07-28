@@ -48,7 +48,7 @@
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="name">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
-        <a href="" class="mx-4 text-white" style="font-size: 18px;">cart  ({{$total}})</a>
+        <a href="{{route('products.list')}}" class="mx-4 text-white" style="font-size: 18px;">cart  ({{$total}})</a>
       </div>
     </div>
   </nav>
