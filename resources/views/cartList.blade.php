@@ -2,7 +2,7 @@
     @section('Product Lists')
     @section('content')
         <div class="p-5" style="width: 1000px;margin:10px auto;">
-            <a href="" class="btn btn-info">Buy</a>
+            <a href="{{route('product.ordernow')}}" class="btn btn-info">Buy</a>
                 @if (Session::has("remove"))
                     <div class="alert alert-success my-5">{{Session::get("remove")}}</div>
                 @endif
@@ -16,6 +16,6 @@
                         <a href="/removeCart/{{$cart->cart_id}}" class="btn btn-warning">Remove Cart</a>
                     </div>
                 @endforeach
-            <a href="" class="btn btn-info">Buy</a>
+            <a href="{{route('product.ordernow')}}" class="btn btn-info">Buy</a>
         </div>
     @endsection
