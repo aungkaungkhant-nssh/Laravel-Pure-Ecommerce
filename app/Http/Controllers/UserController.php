@@ -36,4 +36,5 @@ class UserController extends Controller
         $req->session()->forget("user");
         return redirect('/');
     }
+   
 }

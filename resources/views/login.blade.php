@@ -9,8 +9,9 @@
                     <h3 class="text-center text-info">Please Login</h3>
                 </div>
                 <div class="card-body">
-                   @if (Session::has("error"))
-                       <div class="alert alert-danger">{{Session::get("error")}}</div>
+                   
+                   @if (session()->has("error"))
+                       <div class="alert alert-danger">{{session()->get("error")}}</div>
                    @endif
                    <form action="/login" method="post">
                        @csrf

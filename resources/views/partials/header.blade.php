@@ -1,3 +1,11 @@
+<?php
+  use App\Http\Controllers\ProductController;
+  $total=0;
+  if(session()->has("user")){
+    $total=ProductController::cartItem();
+  }
+
+?>
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
     <div class="container">
       <a class="navbar-brand text-warning" href="/"><h3>LaravelEcommerce</h3></a>
@@ -35,12 +43,12 @@
             </li>
           @endif
          
-         
         </ul>
         <form class="d-flex"  action="/search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="name">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
+        <a href="" class="mx-4 text-white" style="font-size: 18px;">cart  ({{$total}})</a>
       </div>
     </div>
   </nav>

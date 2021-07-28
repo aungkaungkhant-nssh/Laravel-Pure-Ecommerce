@@ -23,8 +23,8 @@ Route::get("/logout",[UserController::class,'logout']);
 Route::get("/register",function(){
 return view("register");
 });
-
 Route::post("/addUser",[UserController::class,'addUser']);
 Route::post("/login",[UserController::class,'login']);
 Route::get("/detail/{id}",[ProductController::class,'detail']);
 Route::get('/search',[ProductController::class,'search'])->name("product.search");
+Route::get("/addcart/{id}",[ProductController::class,'addCart'])->name("product.cart");

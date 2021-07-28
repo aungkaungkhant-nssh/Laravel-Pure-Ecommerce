@@ -15,7 +15,7 @@
                           <div class="d-flex justify-content-between">
                                 {{-- <div></div> --}}
                                 <a href="/" class="btn btn-warning">Back</a>
-                                <a href="" class="btn btn-primary">Add To Cart</a>
+                                <a href="/addcart/{{$product->id}}" class="btn btn-primary">Add To Cart</a>
                           </div>
                           
                        </div>

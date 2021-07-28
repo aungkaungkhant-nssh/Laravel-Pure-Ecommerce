@@ -17,7 +17,7 @@ class UserCheck
     public function handle(Request $request, Closure $next)
     {
         if($request->path()==="login" && $request->session()->has("user")){
-            return redirect("/home");
+            return redirect("/");
         }
         return $next($request);
     }
