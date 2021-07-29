@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -31,3 +32,4 @@ Route::get("/addcart/{id}",[ProductController::class,'addCart'])->name("product.
 Route::get("/cartList",[ProductController::class,'cartList'])->name("products.list");
 Route::get("/removeCart/{id}",[ProductController::class,'removeCart'])->name("products.remove");
 Route::get("/orderNow",[ProductController::class,'orderNow'])->name("product.ordernow");
+Route::post("/order",[OrderController::class,"order"])->name("product.order");
