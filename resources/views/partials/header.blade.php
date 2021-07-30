@@ -18,7 +18,7 @@
             <a class="nav-link  text-white"  href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link  text-white" href="/orders">Orders</a>
+            <a class="nav-link  text-white" href="{{route('orders.all')}}">Orders</a>
           </li>
           @if (!Session::has("user"))
               <li class="nav-item dropdown ">

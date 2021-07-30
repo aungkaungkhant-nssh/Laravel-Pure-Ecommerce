@@ -33,3 +33,4 @@ Route::get("/cartList",[ProductController::class,'cartList'])->name("products.li
 Route::get("/removeCart/{id}",[ProductController::class,'removeCart'])->name("products.remove");
 Route::get("/orderNow",[ProductController::class,'orderNow'])->name("product.ordernow");
 Route::post("/order",[OrderController::class,"order"])->name("product.order");
+Route::get("/ordersList",[OrderController::class,"index"])->name("orders.all");

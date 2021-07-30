@@ -6,12 +6,21 @@ use App\Http\Requests\OrderRequest;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\TotalAmt;
-use Illuminate\Http\Request;
+use Illuminate\Contracts\Session\Session;
+use Illuminate\Http\Request;        
 use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
-   public function order(OrderRequest $request){
+      public function index(Request $request){
+            $userId=$request->session()->get("user")->id;
+            $orders=DB::table('orders')
+            ->join("products","orders.product_id","=","products.id")
+            ->where("orders.user_id", $userId)
+            ->get();
+            return view("totalOrders",["orders"=>$orders]);
+      }
+       public function order(OrderRequest $request){
         $userId=$request->session()->get("user")->id; 
          $carts=Cart::where("user_id",$userId)->get();
         foreach($carts as $cart){
